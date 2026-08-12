@@ -49,6 +49,29 @@ Internal Signals of the FIFO module:
   <img src="async_fifo_axi_schematic2.png" alt="FIFO Block Diagram 2" width="700">
 </p>
 
+Here are the results of a few of the test benches in Vivado simulation:
+
+<p align="left">
+  <img src="async_fifo_axi_waveform1.png" alt="FIFO Block Diagram 2" width="700">
+</p>
+The waveform above was the first test case where data was written to and read from.
+
+
+
+<p align="left">
+  <img src="async_fifo_axi_waveform2.png" alt="FIFO Block Diagram 2" width="700">
+</p>
+The waveform above was the second test case where data was attempted to be written to a full FIFO.
+
+
+
+<p align="left">
+  <img src="async_fifo_axi_waveform3.png" alt="FIFO Block Diagram 2" width="700">
+</p>
+The waveform above was the third test case where data was attempted to be read from an empty FIFO.
+
+
+
 An overview of the challenges that were addressed and their solutions:
 - **Clock Domain Crossing**<br>
   - Used two flip flop synchronizers to cross pointer signals between clock domains and prevent metastability
