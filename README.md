@@ -51,6 +51,10 @@ Internal Signals of the FIFO module:
   <img src="async_fifo_axi_schematic2.png" alt="FIFO Block Diagram 2" width="700">
 </p>
 
+<p align="center">
+  <img src="async_fifo_axi_schematic3.png" alt="FIFO Block Diagram 2" width="700">
+</p>
+
 ## Simulation
 
 Here are the results of a few of the test benches in Vivado simulation:
