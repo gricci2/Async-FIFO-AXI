@@ -1,10 +1,12 @@
 # Async-FIFO-AXI
 
-This project implements an asynchronous FIFO with an outer AXI module.
+This project implements an asynchronous FIFO with an outer AXI module. The FIFO is able to use two separate clock signals, a write clock signal and a read clock signal, to transfer data through its memory in a First-In First-Out order. AXI handshake signals of `Valid` and `Ready` are used on both upstream and downstream sides of the AXI wrapper module to ensure standardized communication. Internal pointers are Gray Coded for safe transition of the multi-bit counters. Lastly, two flip-flops were used for each clock domain to synchronize the other Gray-coded pointer in an attempt to mitigate metastability.
 
 <p align="center">
   <img src="async_fifo_axi_schematic.png" alt="FIFO Block Diagram 1" width="700">
 </p>
+
+## Signal Definition
 
 Here is a list of the ports of the top level AXI wrapper module:
 - `reset` : resets the FIFO
@@ -49,30 +51,32 @@ Internal Signals of the FIFO module:
   <img src="async_fifo_axi_schematic2.png" alt="FIFO Block Diagram 2" width="700">
 </p>
 
+## Simulation
+
 Here are the results of a few of the test benches in Vivado simulation:
 
 <p align="left">
   <img src="async_fifo_axi_waveform1.png" alt="FIFO Block Diagram 2" width="700">
 </p>
-The waveform above was the first test case where data was written to and read from.
+The waveform above was the first test case where data was written to and read from.  
 
-<br>
+&nbsp;
 
 <p align="left">
   <img src="async_fifo_axi_waveform2.png" alt="FIFO Block Diagram 2" width="700">
 </p>
 The waveform above was the second test case where data was attempted to be written to a full FIFO.
 
-<br>
+&nbsp;
 
 <p align="left">
   <img src="async_fifo_axi_waveform3.png" alt="FIFO Block Diagram 2" width="700">
 </p>
 The waveform above was the third test case where data was attempted to be read from an empty FIFO.
 
-<br>
+&nbsp;
 
-An overview of the challenges that were addressed and their solutions:
+## An overview of the challenges that were addressed and their solutions:
 - **Clock Domain Crossing**<br>
   - Used two flip flop synchronizers to cross pointer signals between clock domains and prevent metastability
   - Used Gray-coded pointers to safely transfer FIFO state
