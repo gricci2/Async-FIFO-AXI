@@ -80,7 +80,7 @@ The waveform above was the third test case where data was attempted to be read f
 
 &nbsp;
 
-## An overview of the challenges that were addressed and their solutions:
+## An overview of the challenges that were addressed and their solutions
 - **Clock Domain Crossing**<br>
   - Used two flip flop synchronizers to cross pointer signals between clock domains and prevent metastability
   - Used Gray-coded pointers to safely transfer FIFO state
