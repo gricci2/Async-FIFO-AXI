@@ -13,3 +13,11 @@ An overview of the challenges and solutions that were addressed:
 - **Verification**<br>
   - Created test benches to verify FIFO operation under conditions of full, empty, reading, and writing
   
+<p align="center">
+  <img src="async_fifo_axi_schematic.png" alt="FIFO Block Diagram 1" width="700">
+</p>
+
+<p align="center">
+  <img src="async_fifo_axi_schematic2.png" alt="FIFO Block Diagram 2" width="700">
+</p>
+
